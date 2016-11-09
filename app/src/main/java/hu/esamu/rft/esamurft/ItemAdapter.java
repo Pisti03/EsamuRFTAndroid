@@ -9,13 +9,16 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ItemAdapter extends BaseAdapter {
     private Context context;
-    private final String[] mobileValues;
+    private final ArrayList<Item> items;
 
-    public ItemAdapter(Context context, String[] mobileValues) {
+    public ItemAdapter(Context context, ArrayList<Item> items) {
         this.context = context;
-        this.mobileValues = mobileValues;
+        this.items = items;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -29,20 +32,19 @@ public class ItemAdapter extends BaseAdapter {
 
             gridView = new View(context);
 
-            // get layout from mobile.xml
             gridView = inflater.inflate(R.layout.inventory_item, null);
 
-            // set value into textview
-            TextView textView = (TextView) gridView
+            TextView label = (TextView) gridView
                     .findViewById(R.id.grid_item_label);
-            textView.setText(mobileValues[position]);
+            label.setText(items.get(position).getName());
+
+            TextView number = (TextView) gridView.findViewById(R.id.grid_item_number);
+            number.setText(Integer.toString(items.get(position).getNumber()));
 
 
             // set image based on selected text
             ImageView imageView = (ImageView) gridView
                     .findViewById(R.id.grid_item_image);
-
-            String mobile = mobileValues[position];
 
             imageView.setImageResource(R.mipmap.ic_launcher);
 
@@ -55,7 +57,7 @@ public class ItemAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return mobileValues.length;
+        return items.size();
     }
 
     @Override

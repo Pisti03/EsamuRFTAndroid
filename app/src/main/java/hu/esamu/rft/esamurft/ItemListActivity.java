@@ -136,6 +136,7 @@ public class ItemListActivity extends AppCompatActivity {
 
     public void toBase(View v) {
         Intent intent = new Intent(ItemListActivity.this, ControlActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();
     }
