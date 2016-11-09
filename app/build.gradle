@@ -69,5 +69,6 @@ dependencies {
     compile 'com.google.protobuf:protobuf-parent:3.1.0'
     compile 'com.google.protobuf:protobuf-java:3.1.0'
 
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta2'
 }
 

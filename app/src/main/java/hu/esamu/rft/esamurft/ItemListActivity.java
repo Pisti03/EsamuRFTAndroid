@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import hu.esamu.rft.esamurft.datacontent.DataContent;
@@ -32,15 +33,14 @@ public class ItemListActivity extends AppCompatActivity {
      * device.
      */
     private boolean mTwoPane;
+    private Camera camera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        camera = new Camera(getApplicationContext(),ItemListActivity.this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_list);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setTitle(getTitle());
 
         View recyclerView = findViewById(R.id.item_list);
         assert recyclerView != null;
@@ -126,5 +126,28 @@ public class ItemListActivity extends AppCompatActivity {
                 return super.toString() + " '" + mContentView.getText() + "'";
             }
         }
+    }
+
+    public void toMap(View v) {
+        Intent intent = new Intent(ItemListActivity.this, MapsActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void toBase(View v) {
+        Intent intent = new Intent(ItemListActivity.this, ControlActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void toCamera(View v) {
+        camera.dispatchTakePictureIntent();
+    }
+
+    public void toQuest(View v) {
+    }
+
+    public void toCraft(View v) {
+        Toast.makeText(this, "TODO", Toast.LENGTH_SHORT).show();
     }
 }

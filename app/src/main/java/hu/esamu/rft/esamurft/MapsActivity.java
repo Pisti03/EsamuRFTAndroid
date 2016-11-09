@@ -6,13 +6,18 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
+
+import java.util.ResourceBundle;
 
 /**
  * This demo shows how GMS Location can be used to check for changes to the users location.  The
@@ -32,6 +37,7 @@ public class MapsActivity extends AppCompatActivity
      * @see #onRequestPermissionsResult(int, String[], int[])
      */
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
+    private Camera camera;
 
     /**
      * Flag indicating whether a requested permission has been denied after returning in
@@ -43,6 +49,7 @@ public class MapsActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        camera = new Camera(getApplicationContext(),MapsActivity.this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
@@ -116,5 +123,29 @@ public class MapsActivity extends AppCompatActivity
     private void showMissingPermissionError() {
         PermissionUtils.PermissionDeniedDialog
                 .newInstance(true).show(getSupportFragmentManager(), "dialog");
+    }
+
+    public void toMap(View v) {
+
+    }
+
+    public void toBase(View v) {
+        Intent intent = new Intent(MapsActivity.this, ControlActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void toCamera(View v) {
+        camera.dispatchTakePictureIntent();
+    }
+
+    public void toQuest(View v) {
+        Intent intent = new Intent(MapsActivity.this, ItemListActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void toCraft(View v) {
+        Toast.makeText(this, "TODO", Toast.LENGTH_SHORT).show();
     }
 }
