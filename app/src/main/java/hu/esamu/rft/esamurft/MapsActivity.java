@@ -146,6 +146,7 @@ public class MapsActivity extends AppCompatActivity
     }
 
     public void toCraft(View v) {
-        Toast.makeText(this, "TODO", Toast.LENGTH_SHORT).show();
+        this.startActivity(new Intent(this, InventoryActivitiy.class));
+        finish();
     }
 }
