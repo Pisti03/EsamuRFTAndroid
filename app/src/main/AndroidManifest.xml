@@ -50,7 +50,8 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -81,7 +82,9 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".InventoryActivitiy"></activity>
+        <activity
+            android:name=".InventoryActivitiy"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
