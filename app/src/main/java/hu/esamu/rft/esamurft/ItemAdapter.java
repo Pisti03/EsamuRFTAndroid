@@ -45,8 +45,7 @@ public class ItemAdapter extends BaseAdapter {
             // set image based on selected text
             ImageView imageView = (ImageView) gridView
                     .findViewById(R.id.grid_item_image);
-
-            imageView.setImageResource(R.mipmap.ic_launcher);
+            imageView.setImageResource(context.getResources().getIdentifier("hu.esamu.rft.esamurft:mipmap/" + items.get(position).getImage(),null, null));
 
         } else {
             gridView = (View) convertView;
