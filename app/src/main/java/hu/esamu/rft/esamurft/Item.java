@@ -1,10 +1,6 @@
 package hu.esamu.rft.esamurft;
 
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-
-
 public class Item {
     private String name;
     private int number;

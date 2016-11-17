@@ -10,7 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class InventoryActivitiy extends AppCompatActivity {
     GridView gridView;
@@ -46,8 +45,7 @@ public class InventoryActivitiy extends AppCompatActivity {
                                     int position, long id) {
                 Toast.makeText(
                         getApplicationContext(),
-                        ((TextView) v.findViewById(R.id.grid_item_label))
-                                .getText(), Toast.LENGTH_SHORT).show();
+                        items.get(position).getName(), Toast.LENGTH_SHORT).show();
 
             }
         });
