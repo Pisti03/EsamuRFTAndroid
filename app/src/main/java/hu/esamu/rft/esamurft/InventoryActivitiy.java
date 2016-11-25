@@ -19,18 +19,18 @@ public class InventoryActivitiy extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         items = new ArrayList<Item>();
-        items.add(new Item("Wood",1, "ic_launcher"));
-        items.add(new Item("Stone",2, "ic_launcher"));
-        items.add(new Item("Asd",6, "ic_launcher"));
-        items.add(new Item("Asd2",3, "ic_launcher"));
-        items.add(new Item("Asd3",2, "ic_launcher"));
-        items.add(new Item("Asd4",10, "ic_launcher"));
-        items.add(new Item("Asd5",20, "ic_launcher"));
-        items.add(new Item("Asd6",22, "ic_launcher"));
-        items.add(new Item("Asd7",5, "ic_launcher"));
-        items.add(new Item("Asd8",2, "ic_launcher"));
-        items.add(new Item("Asd9",7, "ic_launcher"));
-        items.add(new Item("Asd10",55, "ic_launcher"));
+        items.add(new Item(1, "Wood",1, "ic_launcher"));
+        items.add(new Item(2, "Stone",2, "ic_launcher"));
+        items.add(new Item(3, "Asd",6, "ic_launcher"));
+        items.add(new Item(4, "Asd2",3, "ic_launcher"));
+        items.add(new Item(5, "Asd3",2, "ic_launcher"));
+        items.add(new Item(6, "Asd4",10, "ic_launcher"));
+        items.add(new Item(7, "Asd5",20, "ic_launcher"));
+        items.add(new Item(8, "Asd6",22, "ic_launcher"));
+        items.add(new Item(9, "Asd7",5, "ic_launcher"));
+        items.add(new Item(10, "Asd8",2, "ic_launcher"));
+        items.add(new Item(11, "Asd9",7, "ic_launcher"));
+        items.add(new Item(12, "Asd10",55, "ic_launcher"));
 
         camera = new Camera(getApplicationContext(),InventoryActivitiy.this);
         super.onCreate(savedInstanceState);
