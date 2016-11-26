@@ -8,12 +8,19 @@
     android:fitsSystemWindows="true"
     tools:context="hu.esamu.rft.esamurft.ControlActivity">
 
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_fragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:id="@+id/relativeLayout"
         android:layout_centerHorizontal="true">
+
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,40 +60,6 @@
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/buttonCamera"
             android:onClick="toQuest"/>
-
     </RelativeLayout>
-
-    <include layout="@layout/content_control"/>
-
-    <FrameLayout
-        android:id="@+id/map_container"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
-
-        <fragment
-            android:id="@+id/map"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="3dp"
-            android:name="com.google.android.gms.maps.SupportMapFragment"/>
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/map_bg_box"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:id="@+id/imageView2" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/button2"
-            android:onClick="toMap"
-            android:alpha="0"/>
-    </FrameLayout>
 
 </RelativeLayout>
