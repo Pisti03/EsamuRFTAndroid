@@ -1,7 +1,7 @@
 package hu.esamu.rft.esamurft;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,12 +14,12 @@ public class ControlActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        camera = new Camera(getApplicationContext(),ControlActivity.this);
         super.onCreate(savedInstanceState);
+        camera = new Camera(getApplicationContext(),ControlActivity.this);
         setContentView(R.layout.activity_control);
 
-        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
-        android.support.v4.app.Fragment asd = new BaseFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment asd = new BaseFragment();
         fragmentManager.beginTransaction().add(R.id.main_fragment, asd ).commit();
     }
 
@@ -42,7 +42,7 @@ public class ControlActivity extends AppCompatActivity {
 
     public void toCraft(View v) {
 
-        FragmentManager fragmentManager= getFragmentManager();
+        FragmentManager fragmentManager= getSupportFragmentManager();
         Fragment asd = new InventoryFragment();
         fragmentManager.beginTransaction().add(R.id.main_fragment, asd ).commit();
     }

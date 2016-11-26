@@ -8,11 +8,16 @@
     android:fitsSystemWindows="true"
     tools:context="hu.esamu.rft.esamurft.ControlActivity">
 
-    <fragment
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/main_fragment"
-        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+        android:layout_height="match_parent">
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/main_fragment"
+            android:name="hu.esamu.rft.esamurft.BaseFragment"/>
+    </RelativeLayout>
+
 
     <RelativeLayout
         android:layout_width="wrap_content"
